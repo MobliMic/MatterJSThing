@@ -12,23 +12,38 @@ var Engine = Matter.Engine,
 
 function init() {
 
+
+    var borders = [
+        Bodies.rectangle(395, 600, 815, 50, { isStatic: true }),
+        Bodies.rectangle(395, 0, 815, 50, { isStatic: true }),
+        Bodies.rectangle(800, 300, 50, 815, { isStatic: true }),
+        Bodies.rectangle(0, 300, 50, 815, { isStatic: true })
+    ];
+
     var engine = Engine.create(document.body);
     var mouse = MouseConstraint.create(engine, {
         constraint: { stiffness: 1 }
     });
 
-    var ground = Bodies.rectangle(395, 600, 815, 50, { isStatic: true });
     var rock = Bodies.polygon(170, 450, 8, 20);
 
     var anchor = { x: 170, y: 450};
     var elastic = Constraint.create({ pointA: anchor, bodyB: rock, stiffness: 0.1 });
 
-    var pyramid = Composites.pyramid(450, 300, 13, 10, 0, 0,
+    /*var pyramid = Composites.pyramid(450, 100, 13, 10, 0, 0,
+     function (x, y, column, row) {
+     return Bodies.rectangle(x, y, 25, 25);
+     });*/
+
+    var obstacle = Bodies.rectangle(500, 400, 15, 350, {isStatic: true});
+
+    var stack = Composites.stack(550, 400, 1, 5, 0, 0,
         function (x, y, column, row) {
-            return Bodies.rectangle(x, y, 25, 40);
+            return Bodies.rectangle(x, y, 25, 25);
         });
 
-    World.add(engine.world, [mouse, ground, pyramid, rock, elastic]);
+    World.add(engine.world, [mouse, obstacle, stack, rock, elastic]);
+    World.add(engine.world, borders);
 
     Events.on(engine, 'tick', function (event) {
         if (engine.input.mouse.button === -1 && rock.position.x > 190) {

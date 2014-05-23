@@ -26,25 +26,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="272">
+            <state line="1" column="6" selection-start="22" selection-end="22" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="272">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="24" selection-start="26" selection-end="26" vertical-scroll-proportion="0.03024911" vertical-offset="0" max-vertical-offset="562">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/game/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0" vertical-offset="313" max-vertical-offset="901">
+            <state line="17" column="28" selection-start="406" selection-end="406" vertical-scroll-proportion="0.11564626" vertical-offset="221" max-vertical-offset="1156">
               <folding />
             </state>
           </provider>
@@ -66,9 +57,9 @@
         <option value="$PROJECT_DIR$/resources/js/erro.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/resources/js/game/erro.js" />
-        <option value="$PROJECT_DIR$/resources/js/game/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/resources/js/game/main.js" />
       </list>
     </option>
   </component>
@@ -240,23 +231,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/game/main.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0" vertical-offset="313" max-vertical-offset="901">
+        <state line="1" column="24" selection-start="26" selection-end="26" vertical-scroll-proportion="0.03024911" vertical-offset="0" max-vertical-offset="562">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="272">
+        <state line="1" column="6" selection-start="22" selection-end="22" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="272">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/resources/js/game/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="24" selection-start="26" selection-end="26" vertical-scroll-proportion="0.03024911" vertical-offset="0" max-vertical-offset="562">
+        <state line="17" column="28" selection-start="406" selection-end="406" vertical-scroll-proportion="0.11564626" vertical-offset="221" max-vertical-offset="1156">
           <folding />
         </state>
       </provider>
