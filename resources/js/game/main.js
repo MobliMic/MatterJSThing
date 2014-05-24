@@ -30,19 +30,20 @@ function init() {
     var anchor = { x: 170, y: 450};
     var elastic = Constraint.create({ pointA: anchor, bodyB: rock, stiffness: 0.1 });
 
-    /*var pyramid = Composites.pyramid(450, 100, 13, 10, 0, 0,
+    var pyramid = Composites.pyramid(450, 100, 30, 15, 0, 0,
      function (x, y, column, row) {
-     return Bodies.rectangle(x, y, 25, 25);
-     });*/
+     return Bodies.rectangle(x, y, 10, 10);
+     });
 
-    var obstacle = Bodies.rectangle(500, 400, 15, 350, {isStatic: true});
+    //var obstacle = Bodies.rectangle(500, 400, 15, 350, {isStatic: true});
+    var obstacle = Bodies.rectangle(600, 400, 350, 15, {isStatic: true});
 
     var stack = Composites.stack(550, 400, 1, 5, 0, 0,
         function (x, y, column, row) {
             return Bodies.rectangle(x, y, 25, 25);
         });
 
-    World.add(engine.world, [mouse, obstacle, stack, rock, elastic]);
+    World.add(engine.world, [mouse, obstacle, pyramid, stack, rock, elastic]);
     World.add(engine.world, borders);
 
     Events.on(engine, 'tick', function (event) {
