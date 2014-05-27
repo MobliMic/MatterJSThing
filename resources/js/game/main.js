@@ -2,13 +2,13 @@
  * Created by Michael on 23/05/14.
  */
 
-var Engine = Matter.Engine,
-    World = Matter.World,
-    Bodies = Matter.Bodies,
-    Constraint = Matter.Constraint,
-    Composites = Matter.Composites,
-    MouseConstraint = Matter.MouseConstraint,
-    Events = Matter.Events;
+var Engine = Matter.Engine;
+var World = Matter.World;
+var Bodies = Matter.Bodies;
+var Constraint = Matter.Constraint;
+var Composites = Matter.Composites;
+var MouseConstraint = Matter.MouseConstraint;
+var Events = Matter.Events;
 
 function init() {
 
@@ -31,9 +31,9 @@ function init() {
     var elastic = Constraint.create({ pointA: anchor, bodyB: rock, stiffness: 0.1 });
 
     var pyramid = Composites.pyramid(450, 100, 30, 15, 0, 0,
-     function (x, y, column, row) {
-     return Bodies.rectangle(x, y, 10, 10);
-     });
+        function (x, y, column, row) {
+            return Bodies.rectangle(x, y, 10, 10);
+        });
 
     //var obstacle = Bodies.rectangle(500, 400, 15, 350, {isStatic: true});
     var obstacle = Bodies.rectangle(600, 400, 350, 15, {isStatic: true});
