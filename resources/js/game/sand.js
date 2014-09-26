@@ -10,30 +10,30 @@ var Composites = Matter.Composites;
 var MouseConstraint = Matter.MouseConstraint;
 var Events = Matter.Events;
 
-var MatterDemo = {};
 
-MatterDemo.init = function() {
+
+function init() {
 
     var container = document.getElementById('main');
 
     var options = [];
 
     var borders = [
-        Bodies.rectangle(395, 600, 815, 50, {isStatic: true}),
-        Bodies.rectangle(395, 0, 815, 50, {isStatic: true}),
-        Bodies.rectangle(800, 300, 50, 815, {isStatic: true}),
-        Bodies.rectangle(0, 300, 50, 815, {isStatic: true})
+        Bodies.rectangle(395, 600, 815, 50, { isStatic: true }),
+        Bodies.rectangle(395, 0, 815, 50, { isStatic: true }),
+        Bodies.rectangle(800, 300, 50, 815, { isStatic: true }),
+        Bodies.rectangle(0, 300, 50, 815, { isStatic: true })
     ];
 
     var engine = Engine.create(container, options);
     var mouse = MouseConstraint.create(engine, {
-        constraint: {stiffness: 1}
+        constraint: { stiffness: 1 }
     });
 
     var rock = Bodies.polygon(170, 450, 8, 20);
 
-    var anchor = {x: 170, y: 450};
-    var elastic = Constraint.create({pointA: anchor, bodyB: rock, stiffness: 0.1});
+    var anchor = { x: 170, y: 450};
+    var elastic = Constraint.create({ pointA: anchor, bodyB: rock, stiffness: 0.1 });
 
     var pyramid = Composites.pyramid(450, 100, 30, 15, 0, 0,
         function (x, y, column, row) {
@@ -61,16 +61,8 @@ MatterDemo.init = function() {
 
     Engine.run(engine);
 
-};
+}
 
-MatterDemo.main = function() {
+window.addEventListener('load', init);
 
-};
 
-window.addEventListener('load', MatterDemo.init);
-
-$(document).ready(function(){
-    $( '#main' ).on( "mousemove", function( event ) {
-        $( "#sand" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
-    });
-});
