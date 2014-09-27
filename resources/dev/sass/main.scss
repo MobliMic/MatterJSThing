@@ -1,0 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,700,400);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nav {
+  font-size: 1em;
+  list-style: none;
+  margin-bottom: 10px;
+  display: block;
+
+  :last-child {
+    border-right: none;
+  }
+}
+
+.nav-link {
+  float: left;
+  padding: 0 5px 5px 5px;
+  border-right: 1px solid #000;
+}
+
+#main {
+
+}

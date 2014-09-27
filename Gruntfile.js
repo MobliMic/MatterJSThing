@@ -1,9 +1,21 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        watch: {
+            scripts: {
+                files: [
+                    'resources/dev/sass/*.scss',
+                    'resources/dev/js/*/*.js'
+                ],
+                tasks: ['default'],
+                options: {
+                    interrupt: true
+                }
+            }
+        },
         jshint: {
-            files: ['Gruntfile.js', 'resources/js/game/*.js'],
+            files: ['Gruntfile.js', 'resources/dev/js/game/*.js'],
             options: {
                 // options here to override JSHint defaults
                 globals: {
@@ -20,7 +32,14 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'resources/css/main.css': 'resources/sass/main.scss'
+                    'resources/prod/css/main.css': ['resources/dev/sass/*.scss']
+                }
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'resources/prod/js/main.min.js': ['resources/dev/js/inc/matter-0.8.0.min.js', 'resources/dev/js/game/main.js']
                 }
             }
         }
@@ -28,8 +47,10 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('default', ['jshint', 'sass']);
+    grunt.registerTask('default', ['jshint', 'sass', 'uglify']);
 
 };
