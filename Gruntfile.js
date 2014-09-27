@@ -13,11 +13,23 @@ module.exports = function(grunt) {
                     document: true
                 }
             }
+        },
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: {
+                    'resources/css/main.css': 'resources/sass/main.scss'
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('default', ['jshint', 'sass']);
 
 };
